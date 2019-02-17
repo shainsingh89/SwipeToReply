@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F59496</color><!--008577-->
+    <color name="colorPrimaryDark">#F36B6D</color>  <!--#00574B-->
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorE">#c4c4c4</color>
+    <color name="replyBackground">#DADADA</color>
+
+    <color name="colorAccent2">#D5D3D3</color>
+    <color name="colorAccent3">#F59496</color>
+    <color name="textColor">#1A1616</color>
+</resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foregroundGravity="top"
+            app:layout_constraintBottom_toTopOf="@+id/reply_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:itemCount="20"
+            tools:listitem="@layout/send_message_row"
+            tools:text="@tools:sample/cities"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/replyBackground"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/editor_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+                android:id="@+id/txtQuotedMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text=" h ghgdhg fgd"/>
+
+        <ImageButton
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_close_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/editor_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorE"
+                app:layout_constraintBottom_toTopOf="@+id/edit_message"/>
+
+
+        <EditText
+                android:id="@+id/edit_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Send message"
+                android:imeOptions="flagNoExtractUi|actionSend"
+                android:inputType="textMultiLine|textCapSentences|textShortMessage"
+                android:maxLength="2000"
+                android:maxLines="5"
+                android:minHeight="52dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="Hellow "/>
+
+        <ImageButton
+                android:id="@+id/send_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/ic_send_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/edit_message"
+                app:layout_constraintTop_toTopOf="@+id/edit_message"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--  <androidx.constraintlayout.widget.Barrier
+          android:id="@+id/barrier"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:barrierDirection="bottom"
+          app:layout_constraintBottom_toTopOf="@+id/reply_layout"
+          app:layout_constraintTop_toBottomOf="@+id/recyclerView" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
